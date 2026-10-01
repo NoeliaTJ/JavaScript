@@ -40,7 +40,6 @@ Una vez asignado un valor, **se puede modificar**.
 
 ## Comentarios
 
-```js
 // Comentario de una línea (o Cmd + / en VS Code)
 /* Comentario en bloque */
 
@@ -66,7 +65,7 @@ Math.floor(x)	Redondea siempre hacia abajo	Math.floor(4.9)	4
 Math.ceil(x)	Redondea siempre hacia arriba	Math.ceil(4.1)	5
 Math.trunc(x)	Elimina la parte decimal (sin redondear)	Math.trunc(4.9)	4
 
-⚠️ Con números negativos: floor ≠ trunc
+Con números negativos: floor ≠ trunc
 console.log(Math.floor(-4.2)); // -5  (hacia abajo = más negativo)
 console.log(Math.trunc(-4.2)); // -4  (solo corta la parte decimal)
 console.log(Math.ceil(-4.2));  // -4  (hacia arriba = más positivo)
@@ -129,3 +128,32 @@ if (estaLloviendo && (tengoParaguas || tengoChubasquero)) {
         console.log("Puedes salir tranquilo");
     }
 }
+
+## Switch en JavaScript
+Es una estructura condicional para seleccionar una acción según valores concretos. No sustituye a if en comparaciones o rangos; se complementa con él.
+
+## Partes
+Parte	Función
+switch (expr)	Expresión a evaluar
+case valor:	Coincidencia estricta (===)
+break;	Sale del switch (no del script)
+default:	Se ejecuta si ningún case coincide
+
+## ¿Cuándo usar switch y cuándo if?
+Situación	Estructura
+Valores concretos (1, "MAGO", "/")	switch
+Comparaciones / rangos (>=, <)	if / else if
+Condiciones lógicas compuestas	if
+
+## Puntos clave
+Comparación estricta: switch usa ===. Un prompt() devuelve string, así que para números hay que convertir con Number() o parseInt().
+break obligatorio: sin él, la ejecución "cae" al siguiente case (fall-through).
+Combinar con if: dentro de un case se puede usar if para validaciones o rangos (ej. división entre 0).
+switch anidado: posible (ej. menú → submenú), pero solo cuando los valores sean concretos y la estructura siga siendo legible.
+Errores frecuentes
+Error	Corrección
+Olvidar break	Añadirlo en cada case
+Usar switch para rangos	Usar if
+Comparar número con texto	Convertir la entrada al mismo tipo
+No incluir default	Añadirlo para valores no contemplados
+Exceso de switch anidados	Combinar switch + if según el problema
