@@ -157,3 +157,49 @@ Usar switch para rangos	Usar if
 Comparar número con texto	Convertir la entrada al mismo tipo
 No incluir default	Añadirlo para valores no contemplados
 Exceso de switch anidados	Combinar switch + if según el problema
+
+## Bucle while en JavaScript
+While repite un bloque de código mientras su condición sea true.  La condición se comprueba antes de cada iteración, por lo que el bucle puede ejecutarse 0 veces si la condición es falsa desde el inicio. 
+
+## Estructura básica
+while (condicion) {
+  // Instrucciones que se repiten
+}
+
+Un while correcto necesita tres elementos:
+
+## Inicialización: 
+valor inicial de la variable de control. 
+## Condición: 
+mientras sea true, se repite el bloque. 
+## Actualización: 
+modifica la variable para que la condición pueda volverse false.
+let numero = 1;
+while (numero <= 5) {
+  console.log(numero);
+  numero++;
+}
+
+## Operadores de incremento/decremento
+Forma	Equivalente	Efecto
+numero++	numero = numero + 1	Aumenta 1
+numero--	numero = numero - 1	Disminuye 1
+numero += 5	numero = numero + 5	Aumenta 5
+numero -= 5	numero = numero - 5	Disminuye 5
+
+# Patrones básicos
+## Contador: 
+registra cuántas veces ocurre algo (ej. contador++ en cada iteración).
+## Acumulador: 
+reúne valores, por ejemplo sumándolos (ej. suma += numero).
+## Valor centinela: 
+un valor especial (p. ej. 0) que indica que la entrada debe terminar. Se lee una vez antes del while y se vuelve a leer dentro del bucle.
+## Validación: 
+se pide un dato y se repite el while mientras el dato sea inválido, hasta que el usuario proporcione uno correcto.
+## Menú repetitivo: 
+se muestra un menú con opciones, se lee la opción antes del bucle y se vuelve a leer al final de cada iteración (usando switch para actuar según la opción).
+# Errores frecuentes y buenas prácticas
+## Bucle infinito: 
+si la condición nunca llega a ser false, el bucle no termina. Siempre verifica qué variable controla el while y dónde se actualiza. 
+## Condiciones múltiples: 
+se pueden combinar varias condiciones con && o || (ej. while (password !== "1234" && intentos < 3)).
