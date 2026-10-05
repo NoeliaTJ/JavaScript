@@ -1,0 +1,46 @@
+// MiniReto. Analizador de 10 números
+// 1. Inicializa suma a 0.
+// 2. Pide 10 números utilizando un único for.
+// 3. Acumula su suma.
+// 4. Detecta mayor y menor utilizando el primer número introducido para inicializarlos.
+// 5. Cuenta pares e impares.
+// 6. Muestra suma, mayor, menor, pares e impares.
+// Objetivo del MiniReto: Integrar for, if, %, contadores, acumuladores y comparaciones sin utilizar arrays.
+
+// Acumulador para la suma total
+let suma = 0;
+// Contadores para pares e impares
+let pares = 0;
+let impares = 0;
+// las declaro sin valor porque se inicaliza con primer número puesto
+let mayor, menor;
+
+for (let i = 1; i <= 10; i++) {
+    let num = parseInt(prompt("Introduce el número " + i + ":"));
+
+    suma += num;
+// en la primera iteración mayor y menor toman el valor del primer número 
+// porque no se puedes comparar aún
+    if (i === 1) {
+        mayor = num;
+        menor = num;
+// en las siguientes, si el número es mayor, se actualiza.
+// igual que si es menor, que también se actualiza.
+    } else {
+        if (num > mayor) mayor = num;
+        if (num < menor) menor = num;
+    }
+// el resto de dividir entre 2 es 0, lo cual, es par. Si no, es impar
+    if (num % 2 === 0) {
+    // son pares e impares +1
+        pares++;
+    } else {
+        impares++;
+    }
+}
+
+alert("Suma: " + suma);
+alert("Mayor: " + mayor);
+alert("Menor: " + menor);
+alert("Pares: " + pares);
+alert("Impares: " + impares);
