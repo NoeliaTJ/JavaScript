@@ -223,3 +223,43 @@ Errores comunes:
 Olvidar el ; final → error de sintaxis.
 Declarar la variable dentro del do cuando la condición la necesita → declárala antes.
 Usar do...while sin necesidad de garantizar una ejecución inicial.
+
+## Clase06. Bucle for.
+El bucle for en JavaScript reúne en una sola línea tres partes: inicialización, condición y actualización:
+
+for (let i = 1; i <= 5; i++) {
+  // instrucciones
+}
+
+## Orden de ejecución: inicialización → comprobar condición → ejecutar bloque → actualización → repetir desde la condición.
+
+## Equivalencia con while:
+
+// while
+let i = 1;
+while (i <= 5) { console.log(i); i++; }
+
+// for (más compacto)
+for (let i = 1; i <= 5; i++) { console.log(i); }
+
+## Variantes de recorrido:
+
+Actualización	Secuencia
+i++	1, 2, 3, 4, 5
+i--	5, 4, 3, 2, 1
+i += 2	2, 4, 6, 8, 10
+
+## Casos de uso típicos:
+
+Contar un número conocido de repeticiones.
+Recorrer una secuencia ascendente o descendente.
+Acumuladores (suma de 1 a 100, etc.).
+Bucles anidados (filas y columnas).
+Recorrer índices de arrays (empezando en 0).
+Errores comunes:
+
+Usar <= cuando el límite no debe incluirse (o viceversa).
+Incrementar en la dirección opuesta al recorrido.
+Olvidar la actualización → bucle infinito.
+Empezar en 1 por costumbre cuando los arrays empiezan en 0.
+## Cuándo elegirlo: cuando sabes de antes cuántas veces repetir o puedes controlar el recorrido con una variable. Si no lo sabes, while o do...while serían más adecuados.
