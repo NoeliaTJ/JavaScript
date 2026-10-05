@@ -203,3 +203,23 @@ se muestra un menú con opciones, se lee la opción antes del bucle y se vuelve 
 si la condición nunca llega a ser false, el bucle no termina. Siempre verifica qué variable controla el while y dónde se actualiza. 
 ## Condiciones múltiples: 
 se pueden combinar varias condiciones con && o || (ej. while (password !== "1234" && intentos < 3)).
+
+# Clase05. bucle do...while 
+Ejecuta el bloque de código al menos una vez y luego evalúa la condición para decidir si repite.  Su sintaxis es:
+
+do {
+  // instrucciones
+} while (condicion);
+
+Diferencia clave con while: while comprueba la condición antes de entrar (0 ejecuciones posibles), mientras que do...while la comprueba después (mínimo 1 ejecución). 
+
+## Casos de uso típicos:
+
+Validar datos de usuario (pedir una nota entre 0 y 10, un número positivo, una contraseña).
+Menús interactivos que se repiten hasta que el usuario elija "Salir".
+Contadores/acumuladores donde la primera iteración es obligatoria.
+Errores comunes:
+
+Olvidar el ; final → error de sintaxis.
+Declarar la variable dentro del do cuando la condición la necesita → declárala antes.
+Usar do...while sin necesidad de garantizar una ejecución inicial.
