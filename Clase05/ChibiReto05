@@ -1,0 +1,39 @@
+// MiniReto. Tienda de videojuego
+// 1. Pide cuánto oro tiene inicialmente el jugador.
+// 2. Dentro de un do...while, pide el precio del siguiente artículo. El valor 0 significa salir.
+// 3. Si el precio es negativo, muestra "Precio inválido" y no compra.
+// 4. Si el precio es mayor que el oro, muestra "No tienes suficiente oro".
+// 5. Si puede pagarlo, descuenta el precio.
+// 6. Cuenta compras válidas y acumula oro gastado.
+// 7. Termina al introducir 0 o quedarse sin oro.
+// 8. Muestra oro restante, compras y total gastado.
+// Objetivo del MiniReto: Integrar do...while con if, condiciones múltiples, contador, acumulador y centinela.
+
+// pide el oro UNA VEZ
+let oro = parseInt(prompt("¿Cuánto oro tienes inicialmente?"));
+let precio;
+// contador de compras válidas
+let compras = 0;
+// Acumulador de oro gastado
+let gastado = 0;
+
+do {
+    // se pide el precio del siguiente articulo
+  precio = parseInt(prompt("Precio del artículo (0 para salir):"));
+
+  // si es negativo, avisa y no compra
+  if (precio < 0) {
+    alert("Precio inválido");
+    // si no llega el dinero, avisa y tampoco compra
+  } else if (precio > oro) {
+    alert("No tienes suficiente oro");
+    // si es valido y pagable, se descuenta
+  } else if (precio !== 0) {
+    oro -= precio;
+    compras++;
+    gastado += precio;
+  }
+  // esto sale si el precio es 0, o el oro es 0
+} while (precio !== 0 && oro > 0);
+
+alert(`Oro restante: ${oro}\nCompras: ${compras}\nTotal gastado: ${gastado}`);
