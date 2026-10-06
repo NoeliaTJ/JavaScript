@@ -224,7 +224,7 @@ Olvidar el ; final → error de sintaxis.
 Declarar la variable dentro del do cuando la condición la necesita → declárala antes.
 Usar do...while sin necesidad de garantizar una ejecución inicial.
 
-## Clase06. Bucle for.
+# Clase06. Bucle for.
 El bucle for en JavaScript reúne en una sola línea tres partes: inicialización, condición y actualización:
 
 for (let i = 1; i <= 5; i++) {
@@ -262,4 +262,37 @@ Usar <= cuando el límite no debe incluirse (o viceversa).
 Incrementar en la dirección opuesta al recorrido.
 Olvidar la actualización → bucle infinito.
 Empezar en 1 por costumbre cuando los arrays empiezan en 0.
-## Cuándo elegirlo: cuando sabes de antes cuántas veces repetir o puedes controlar el recorrido con una variable. Si no lo sabes, while o do...while serían más adecuados.
+## Cuándo elegirlo: 
+cuando sabes de antes cuántas veces repetir o puedes controlar el recorrido con una variable. Si no lo sabes, while o do...while serían más adecuados.  
+
+# Clase 07. Arrays.
+Un array en JavaScript agrupa varios valores con un único nombre, accesibles por índice (que empieza en 0).
+
+const numeros = [10, 20, 30];
+
+## Conceptos clave:
+
+Propiedad / Método	Uso
+array[i]	Leer o modificar el elemento en la posición i
+array.length	Número de elementos
+array.length - 1	Último índice válido
+push(valor)	Añadir un elemento al final
+pop()	Quitar y devolver el último elemento
+
+const con arrays: impide reasignar la variable completa, pero sí permite modificar elementos, push(), pop(), etc.
+
+const numeros = [1, 2, 3];
+numeros[0] = 99;   // permitido
+numeros.push(4);   // permitido
+numeros = [5, 6];  // ❌ Error: reasignación
+
+## Características:
+
+Son dinámicos: pueden crecer o encogerse durante la ejecución.
+Permiten mezclar tipos ([1, "hola", true]), aunque en fundamentos se evita.
+Acceder a una posición inexistente devuelve undefined.
+Errores comunes:
+
+Pensar que el primer elemento está en [1] → está en [0]. (Sí me pasa xD)
+Usar array.length como índice → el último es array.length - 1.
+Creer que const hace inmutable el contenido.
