@@ -149,51 +149,51 @@ Valores concretos (1, "MAGO", "/")	switch
 Comparaciones / rangos (>=, <)	if / else if  
 Condiciones lógicas compuestas	if  
 
-## Puntos clave
+## Puntos clave.  
 * Comparación estricta: switch usa ===.  Un prompt() devuelve string, así que para números hay que convertir con Number() o parseInt().
 break obligatorio: sin él, la ejecución "cae" al siguiente case (fall-through).  
 * Combinar con if: dentro de un case se puede usar if para validaciones o rangos (ej. división entre 0).  
-switch anidado: posible (ej. menú → submenú), pero solo cuando los valores sean concretos y la estructura siga siendo legible.   
+switch anidado: posible (ej. menú → submenú), pero solo cuando los valores sean concretos y la estructura siga siendo legible.    
 
 ## Errores frecuentes  
 Error	Corrección  
 Olvidar break	Añadirlo en cada case  
-Usar switch para rangos	Usar if  
-Comparar número con texto	
-Convertir la entrada al mismo tipo  
-No incluir default	
-Añadirlo para valores no contemplados  
-Exceso de switch anidados	
-Combinar switch + if según el problema
-
+Usar switch para rangos	Usar if    
+Comparar número con texto	 
+Convertir la entrada al mismo tipo   
+No incluir default	 
+Añadirlo para valores no contemplados    
+Exceso de switch anidados	 
+Combinar switch + if según el problema. 
+  
 # Clase04. Bucle while.  
-While repite un bloque de código mientras su condición sea true.  La condición se comprueba antes de cada iteración, por lo que el bucle puede ejecutarse 0 veces si la condición es falsa desde el inicio. 
+While repite un bloque de código mientras su condición sea true.  La condición se comprueba antes de cada iteración, por lo que el bucle puede ejecutarse 0 veces si la condición es falsa desde el inicio.  
 
-## Estructura básica
-while (condicion) {
-  // Instrucciones que se repiten
-}
-
-Un while correcto necesita tres elementos:
-
-## Inicialización: 
+## Estructura básica.  
+while (condicion) {  
+  // Instrucciones que se repiten  
+}  
+  
+Un while correcto necesita tres elementos:  
+  
+## Inicialización:  
 valor inicial de la variable de control. 
-## Condición: 
+## Condición:  
 mientras sea true, se repite el bloque. 
-## Actualización: 
+## Actualización:  
 modifica la variable para que la condición pueda volverse false.
 let numero = 1;
 while (numero <= 5) {
   console.log(numero);
   numero++;
-}
-
-## Operadores de incremento/decremento
-Forma	Equivalente	Efecto
-numero++	numero = numero + 1	Aumenta 1
-numero--	numero = numero - 1	Disminuye 1
-numero += 5	numero = numero + 5	Aumenta 5
-numero -= 5	numero = numero - 5	Disminuye 5
+}  
+  
+## Operadores de incremento/decremento.  
+Forma	Equivalente	Efecto.  
+numero++	numero = numero + 1	Aumenta 1.  
+numero--	numero = numero - 1	Disminuye 1.  
+numero += 5	numero = numero + 5	Aumenta 5.  
+numero -= 5	numero = numero - 5	Disminuye 5.  
 
 # Patrones básicos. 
 ## Contador:   
@@ -206,41 +206,42 @@ un valor especial (p. ej. 0) que indica que la entrada debe terminar. Se lee una
 se pide un dato y se repite el while mientras el dato sea inválido, hasta que el usuario proporcione uno correcto.
 ## Menú repetitivo:  
 se muestra un menú con opciones, se lee la opción antes del bucle y se vuelve a leer al final de cada iteración (usando switch para actuar según la opción).
-# Errores frecuentes y buenas prácticas
-## Bucle infinito: 
-si la condición nunca llega a ser false, el bucle no termina. Siempre verifica qué variable controla el while y dónde se actualiza. 
+## Errores frecuentes y buenas prácticas. 
+## Bucle infinito:  
+si la condición nunca llega a ser false, el bucle no termina. Siempre verifica qué variable controla el while y dónde se actualiza.  
 ## Condiciones múltiples:  
 se pueden combinar varias condiciones con && o || (ej. while (password !== "1234" && intentos < 3))  
 
-# Clase05. bucle do...while  
-Ejecuta el bloque de código al menos una vez y luego evalúa la condición para decidir si repite.  Su sintaxis es:  
+# Clase05. bucle do...while   
+Ejecuta el bloque de código al menos una vez y luego evalúa la condición para decidir si repite.  
+Su sintaxis es:  
 
 do {
   // instrucciones
 } while (condicion);
+  
+Diferencia clave con while: while comprueba la condición antes de entrar (0 ejecuciones posibles), mientras que do...while la comprueba después (mínimo 1 ejecución).   
 
-Diferencia clave con while: while comprueba la condición antes de entrar (0 ejecuciones posibles), mientras que do...while la comprueba después (mínimo 1 ejecución). 
-
-## Casos de uso típicos:
-
-Validar datos de usuario (pedir una nota entre 0 y 10, un número positivo, una contraseña).
-Menús interactivos que se repiten hasta que el usuario elija "Salir".
-Contadores/acumuladores donde la primera iteración es obligatoria.
-Errores comunes:
-
-Olvidar el ; final → error de sintaxis.
-Declarar la variable dentro del do cuando la condición la necesita → declárala antes.
-Usar do...while sin necesidad de garantizar una ejecución inicial.
+## Casos de uso típicos:  
+  
+Validar datos de usuario (pedir una nota entre 0 y 10, un número positivo, una contraseña).  
+Menús interactivos que se repiten hasta que el usuario elija "Salir".  
+Contadores/acumuladores donde la primera iteración es obligatoria.  
+  
+## Errores comunes:  
+* Olvidar el ; final → error de sintaxis.  
+* Declarar la variable dentro del do cuando la condición la necesita → declárala antes.  
+* Usar do...while sin necesidad de garantizar una ejecución inicial.  
 
 # Clase06. Bucle for.
-El bucle for en JavaScript reúne en una sola línea tres partes: inicialización, condición y actualización:
-
-for (let i = 1; i <= 5; i++) {
-  // instrucciones
-}
+El bucle for en JavaScript reúne en una sola línea tres partes: inicialización, condición y actualización:  
+  
+for (let i = 1; i <= 5; i++) { 
+  // instrucciones  
+}  
 
 ## Orden de ejecución:  
-inicialización → comprobar condición → ejecutar bloque → actualización → repetir desde la condición.
+inicialización → comprobar condición → ejecutar bloque → actualización → repetir desde la condición.  
 
 ## Equivalencia con while:
   
@@ -310,3 +311,33 @@ numeros = [5, 6];  // ❌ Error: reasignación
 * Pensar que el primer elemento está en [1] → está en [0]. (Sí me pasa xD)  
 * Usar array.length como índice → el último es array.length - 1.  
 * Creer que const hace inmutable el contenido.  
+
+# Clase08. Arrays y bucle for en JavaScript  
+Patrón clave: for (let i = 0; i < array.length; i++)  
+  
+i empieza en 0 (primer índice).  
+i < array.length (nunca <=, o se sale del array).  
+i++ avanza una posición.  
+array[i] es el elemento actual.  
+
+## Usos del recorrido:  
+
+Uso	/ Idea.  
+1	Rellenar.	Pedir valores con prompt y guardar en array[i].  
+2	Mostrar	console.log(array[i]) en cada iteración.  
+3	Acumular.	suma += array[i] → luego suma / length para la media.  
+4	Contar.	if (array[i] % 2 === 0) pares++  
+5	Buscar.	Comparar array[i] === buscado y contar o guardar el índice.  
+6	Mayor/menor.	Iniciar con array[0] y comparar desde i = 1  
+7	Transformar.	Crear un segundo array: dobles[i] = array[i] * 2  
+8	Comparar vecinos.	array[i] vs array[i+1] (límite: length - 1)  
+
+## Detalles importantes:  
+* i es el índice (0-based); i + 1 es solo para mostrar la posición "humana" al usuario.  
+* Se inicia mayor/menor con array[0] y el bucle arranca en i = 1 para no compararse consigo mismo.  
+* Al comparar con el siguiente elemento, el bucle va hasta length - 1 para no salir del array.  
+  
+## Criterio del curso:   
+No se usan métodos como map(), filter(), reduce(), etc. El objetivo es dominar la lógica con for, if y array[i] antes de pasar a métodos automáticos.  
+
+
