@@ -44,23 +44,23 @@ Una vez asignado un valor, **se puede modificar**.
 // Comentario de una línea (o Cmd + / en VS Code)  
 /* Comentario en bloque */  
 
-Métodos y propiedades de cadenas de texto  
+### Métodos y propiedades de cadenas de texto  
 let frase = "Hola Mundo";  
 
-// Propiedad longitud  
+### // Propiedad longitud  
 let longitudFrase = frase.length;  
 
-// Pasar a minúsculas  
+### // Pasar a minúsculas  
 let fraseEnMinusculas = frase.toLowerCase();  
 
-// Pasar a mayúsculas  
+### // Pasar a mayúsculas  
 let fraseEnMayusculas = frase.toUpperCase();  
 
-// Quitar espacios del principio y del final  
+### // Quitar espacios del principio y del final  
 let fraseSinEspacios = frase.trim(); // *se usa poco*  
 
-Métodos de Math  
-Método	Comportamiento	Ejemplo	Resultado  
+### Métodos de Math  
+## Método	Comportamiento	Ejemplo	Resultado  
 Math.round(x)	Redondea al entero más cercano	Math.round(4.5)	5  
 Math.floor(x)	Redondea siempre hacia abajo	Math.floor(4.9)	4  
 Math.ceil(x)	Redondea siempre hacia arriba	Math.ceil(4.1)	5   
@@ -87,7 +87,7 @@ const resultadoNumero = Number(numero.toFixed(2)); // 4.57 (number)
 
 # Clase02. If, else if, else  
 ## Ejercicios: if / else if / else  
-## Calificar una nota  
+### Calificar una nota  
 const nota = Number(prompt("¿Qué nota tienes?"));   
 
   
@@ -136,8 +136,8 @@ if (estaLloviendo && (tengoParaguas || tengoChubasquero)) {
 # Clase03. Switch.  
 Es una estructura condicional para seleccionar una acción según valores concretos. No sustituye a if en comparaciones o rangos; se complementa con él.
 
-## Partes
-Parte	Función  
+### Partes
+## Parte	Función  
 switch (expr)	Expresión a evaluar   
 case valor:	Coincidencia estricta (===)  
 break;	Sale del switch (no del script)  
@@ -149,22 +149,22 @@ Valores concretos (1, "MAGO", "/")	switch
 Comparaciones / rangos (>=, <)	if / else if  
 Condiciones lógicas compuestas	if  
 
-## Puntos clave.  
+### Puntos clave.  
 * Comparación estricta: switch usa ===.  Un prompt() devuelve string, así que para números hay que convertir con Number() o parseInt().
 break obligatorio: sin él, la ejecución "cae" al siguiente case (fall-through).  
 * Combinar con if: dentro de un case se puede usar if para validaciones o rangos (ej. división entre 0).  
-switch anidado: posible (ej. menú → submenú), pero solo cuando los valores sean concretos y la estructura siga siendo legible.    
+* Switch anidado: posible (ej. menú → submenú), pero solo cuando los valores sean concretos y la estructura siga siendo legible.    
 
-## Errores frecuentes  
-Error	Corrección  
-Olvidar break	Añadirlo en cada case  
-Usar switch para rangos	Usar if    
-Comparar número con texto	 
-Convertir la entrada al mismo tipo   
-No incluir default	 
-Añadirlo para valores no contemplados    
-Exceso de switch anidados	 
-Combinar switch + if según el problema. 
+### Errores frecuentes  
+* Error	Corrección  
+* Olvidar break	Añadirlo en cada case  
+* Usar switch para rangos	Usar if    
+* Comparar número con texto	 
+* Convertir la entrada al mismo tipo   
+* No incluir default	 
+* Añadirlo para valores no contemplados    
+* Exceso de switch anidados	 
+* Combinar switch + if según el problema. 
   
 # Clase04. Bucle while.  
 While repite un bloque de código mientras su condición sea true.  La condición se comprueba antes de cada iteración, por lo que el bucle puede ejecutarse 0 veces si la condición es falsa desde el inicio.  
@@ -176,11 +176,11 @@ while (condicion) {
   
 Un while correcto necesita tres elementos:  
   
-## Inicialización:  
+### Inicialización:  
 valor inicial de la variable de control. 
-## Condición:  
+### Condición:  
 mientras sea true, se repite el bloque. 
-## Actualización:  
+### Actualización:  
 modifica la variable para que la condición pueda volverse false.
 let numero = 1;
 while (numero <= 5) {
@@ -195,26 +195,26 @@ numero--	numero = numero - 1	Disminuye 1.
 numero += 5	numero = numero + 5	Aumenta 5.  
 numero -= 5	numero = numero - 5	Disminuye 5.  
 
-# Patrones básicos. 
-## Contador:   
+## Patrones básicos. 
+### Contador:   
 registra cuántas veces ocurre algo (ej. contador++ en cada iteración).
-## Acumulador: 
+### Acumulador: 
 reúne valores, por ejemplo sumándolos (ej. suma += numero).
-## Valor centinela:  
+### Valor centinela:  
 un valor especial (p. ej. 0) que indica que la entrada debe terminar. Se lee una vez antes del while y se vuelve a leer dentro del bucle.
-## Validación:  
+### Validación:  
 se pide un dato y se repite el while mientras el dato sea inválido, hasta que el usuario proporcione uno correcto.
-## Menú repetitivo:  
+### Menú repetitivo:  
 se muestra un menú con opciones, se lee la opción antes del bucle y se vuelve a leer al final de cada iteración (usando switch para actuar según la opción).
-## Errores frecuentes y buenas prácticas. 
-## Bucle infinito:  
+### Errores frecuentes y buenas prácticas. 
+### Bucle infinito:  
 si la condición nunca llega a ser false, el bucle no termina. Siempre verifica qué variable controla el while y dónde se actualiza.  
-## Condiciones múltiples:  
+### Condiciones múltiples:  
 se pueden combinar varias condiciones con && o || (ej. while (password !== "1234" && intentos < 3))  
 
 # Clase05. bucle do...while   
 Ejecuta el bloque de código al menos una vez y luego evalúa la condición para decidir si repite.  
-Su sintaxis es:  
+*Su sintaxis es:  
 
 do {
   // instrucciones
@@ -222,13 +222,12 @@ do {
   
 Diferencia clave con while: while comprueba la condición antes de entrar (0 ejecuciones posibles), mientras que do...while la comprueba después (mínimo 1 ejecución).   
 
-## Casos de uso típicos:  
+### Casos de uso típicos:  
+* Validar datos de usuario (pedir una nota entre 0 y 10, un número positivo, una contraseña).  
+* Menús interactivos que se repiten hasta que el usuario elija "Salir".  
+* Contadores/acumuladores donde la primera iteración es obligatoria.  
   
-Validar datos de usuario (pedir una nota entre 0 y 10, un número positivo, una contraseña).  
-Menús interactivos que se repiten hasta que el usuario elija "Salir".  
-Contadores/acumuladores donde la primera iteración es obligatoria.  
-  
-## Errores comunes:  
+### Errores comunes:  
 * Olvidar el ; final → error de sintaxis.  
 * Declarar la variable dentro del do cuando la condición la necesita → declárala antes.  
 * Usar do...while sin necesidad de garantizar una ejecución inicial.  
@@ -240,10 +239,10 @@ for (let i = 1; i <= 5; i++) {
   // instrucciones  
 }  
 
-## Orden de ejecución:  
+### Orden de ejecución:  
 inicialización → comprobar condición → ejecutar bloque → actualización → repetir desde la condición.  
 
-## Equivalencia con while:
+### Equivalencia con while:
   
 // while
 let i = 1;
@@ -252,14 +251,14 @@ while (i <= 5) { console.log(i); i++; }
 // for (más compacto)
 for (let i = 1; i <= 5; i++) { console.log(i); }
 
-## Variantes de recorrido:
+### Variantes de recorrido:
   
-Actualización	Secuencia
+Actualización	Secuencia.  
 i++	1, 2, 3, 4, 5
 i--	5, 4, 3, 2, 1
 i += 2	2, 4, 6, 8, 10
 
-## Casos de uso típicos:
+### Casos de uso típicos:
 
 * Contar un número conocido de repeticiones.
 * Recorrer una secuencia ascendente o descendente.
@@ -268,14 +267,14 @@ i += 2	2, 4, 6, 8, 10
 * Recorrer índices de arrays (empezando en 0).
 
 
-## Errores comunes:
+### Errores comunes:
 
-Usar <= cuando el límite no debe incluirse (o viceversa).  
-Incrementar en la dirección opuesta al recorrido.  
-Olvidar la actualización → bucle infinito.  
-Empezar en 1 por costumbre cuando los arrays empiezan en 0.  
+* Usar <= cuando el límite no debe incluirse (o viceversa).  
+* Incrementar en la dirección opuesta al recorrido.  
+* Olvidar la actualización → bucle infinito.  
+* Empezar en 1 por costumbre cuando los arrays empiezan en 0.  
 
-## Cuándo elegirlo: 
+### Cuándo elegirlo: 
 cuando sabes de antes cuántas veces repetir o puedes controlar el recorrido con una variable. Si no lo sabes, while o do...while serían más adecuados.  
 
 # Clase 07. Arrays.
@@ -283,44 +282,44 @@ Un array en JavaScript agrupa varios valores con un único nombre, accesibles po
 
 const numeros = [10, 20, 30];
 
-## Conceptos clave:
+### Conceptos clave:
 
-Propiedad / Método	Uso  
-array[i]	Leer o modificar el elemento en la posición i  
-array.length	Número de elementos  
-array.length - 1	Último índice válido  
-push(valor)	Añadir un elemento al final  
-pop()	Quitar y devolver el último elemento  
+## Propiedad / Método	Uso  
+* array[i]	Leer o modificar el elemento en la posición i  
+* array.length	Número de elementos  
+* array.length - 1	Último índice válido  
+* push(valor)	Añadir un elemento al final  
+* pop()	Quitar y devolver el último elemento  
 
-## const con arrays:  
+### Const con arrays:  
 impide reasignar la variable completa, pero sí permite modificar elementos, push(), pop(), etc.
 
 const numeros = [1, 2, 3];  
 numeros[0] = 99;   // permitido  
 numeros.push(4);   // permitido  
-numeros = [5, 6];  // ❌ Error: reasignación  
+numeros = [5, 6];  // Error: reasignación  
 
-## Características:
+### Características:
 
 * Son dinámicos: pueden crecer o encogerse durante la ejecución.  
 * Permiten mezclar tipos ([1, "hola", true]), aunque en fundamentos se evita.  
 * Acceder a una posición inexistente devuelve undefined.  
 
-## Errores comunes:  
+### Errores comunes:  
 
 * Pensar que el primer elemento está en [1] → está en [0]. (Sí me pasa xD)  
 * Usar array.length como índice → el último es array.length - 1.  
 * Creer que const hace inmutable el contenido.  
 
-# Clase08. Arrays y bucle for en JavaScript  
+# Clase08. Arrays y bucle. 
 Patrón clave: for (let i = 0; i < array.length; i++)  
   
-i empieza en 0 (primer índice).  
-i < array.length (nunca <=, o se sale del array).  
-i++ avanza una posición.  
-array[i] es el elemento actual.  
+* i empieza en 0 (primer índice).  
+* i < array.length (nunca <=, o se sale del array).  
+* i++ avanza una posición.  
+* array[i] es el elemento actual.  
 
-## Usos del recorrido:  
+### Usos del recorrido:  
 
 Uso	/ Idea.  
 1	Rellenar.	Pedir valores con prompt y guardar en array[i].  
@@ -332,12 +331,10 @@ Uso	/ Idea.
 7	Transformar.	Crear un segundo array: dobles[i] = array[i] * 2  
 8	Comparar vecinos.	array[i] vs array[i+1] (límite: length - 1)  
 
-## Detalles importantes:  
+### Detalles importantes:  
 * i es el índice (0-based); i + 1 es solo para mostrar la posición "humana" al usuario.  
 * Se inicia mayor/menor con array[0] y el bucle arranca en i = 1 para no compararse consigo mismo.  
 * Al comparar con el siguiente elemento, el bucle va hasta length - 1 para no salir del array.  
-  
-## Criterio del curso:   
-No se usan métodos como map(), filter(), reduce(), etc. El objetivo es dominar la lógica con for, if y array[i] antes de pasar a métodos automáticos.  
+
 
 
