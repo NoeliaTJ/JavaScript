@@ -321,20 +321,48 @@ Patrón clave: for (let i = 0; i < array.length; i++)
 
 ### Usos del recorrido:  
 
-Uso	/ Idea.  
-1	Rellenar.	Pedir valores con prompt y guardar en array[i].  
-2	Mostrar	console.log(array[i]) en cada iteración.  
-3	Acumular.	suma += array[i] → luego suma / length para la media.  
-4	Contar.	if (array[i] % 2 === 0) pares++  
-5	Buscar.	Comparar array[i] === buscado y contar o guardar el índice.  
-6	Mayor/menor.	Iniciar con array[0] y comparar desde i = 1  
-7	Transformar.	Crear un segundo array: dobles[i] = array[i] * 2  
-8	Comparar vecinos.	array[i] vs array[i+1] (límite: length - 1)  
+| Uso	| Idea |
+|---------|-------|
+| Rellenar | Pedir valores con prompt y guardar en array[i] |  
+| Mostrar	| console.log(array[i]) en cada iteración |  
+| Acumular | suma += array[i] → luego suma / length para la media |  
+| Contar |	if (array[i] % 2 === 0) pares++ |  
+| Buscar |	Comparar array[i] === buscado y contar o guardar el índice |  
+| Mayor/menor |	Iniciar con array[0] y comparar desde i = 1 |  
+| Transformar | Crear un segundo array: dobles[i] = array[i] * 2 |  
+| Comparar vecinos	| array[i] vs array[i+1] (límite: length - 1) | 
 
 ### Detalles importantes:  
 * i es el índice (0-based); i + 1 es solo para mostrar la posición "humana" al usuario.  
 * Se inicia mayor/menor con array[0] y el bucle arranca en i = 1 para no compararse consigo mismo.  
 * Al comparar con el siguiente elemento, el bucle va hasta length - 1 para no salir del array.  
+
+# Clase09. Funciones.  
+
+## Idea central:  
+Una función agrupa instrucciones bajo un nombre. En JS no existe void; sin return devuelve undefined implícitamente. Aquí nos interesa la función como acción, no como valor.  
+  
+## Puntos clave:  
+### ¿Por qué usarlas?  
+Organización, evitar repetición, dar nombre a tareas, facilitar mantenimiento.
+* Estructura: function nombre(param) { ... }. 
+* Llamada: nombre() — cada llamada reejecuta el bloque.  
+* Parámetros: variables en la definición; argumentos son los valores reales en la llamada. Se asignan por posición.  
+* Script principal: JS no tiene main; el código fuera de funciones coordina y delega.
+* Ámbito: las variables dentro de una función son locales y no se accede desde fuera.
+Dentro de una función puedes usar if, for, etc., normalmente.  
+* Arrays como parámetro: se pueden recorrer y modificar (son objetos, se pasan por referencia).  
+* Convención: camelCase → mostrarMenu(), calcularMedia().  
+  
+### Errores frecuentes:  
+
+| Error	| Corrección |  
+|---------|-------|  
+| Escribir el nombre sin () para "ejecutarla"	| La llamada usa nombreFuncion()|  
+| Confundir parámetro con argumento	| Parámetro = definición; argumento = llamada|  
+| Usar una variable local fuera de la función	| Solo existe dentro de su ámbito|  
+| Crear una función enorme	| Dividir por responsabilidades|  
+| Pensar que sin return no devuelve nada | 	Devuelve undefined implícitamente|  
 
 
 
