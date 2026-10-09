@@ -101,7 +101,7 @@ if (nota < 5) {
     console.log("Sobresaliente");  
 }  
 
-## Booleanas y operadores lógicos. 
+## Booleanas y operadores lógicos.  
 let tieneCarnet = true;  
 let respuesta = prompt("¿Tienes carnet? Dime SI o NO");  
   
@@ -136,12 +136,13 @@ if (estaLloviendo && (tengoParaguas || tengoChubasquero)) {
 # Clase03. Switch.  
 Es una estructura condicional para seleccionar una acción según valores concretos. No sustituye a if en comparaciones o rangos; se complementa con él.
 
-### Partes
-## Parte	Función  
-switch (expr)	Expresión a evaluar   
-case valor:	Coincidencia estricta (===)  
-break;	Sale del switch (no del script)  
-default:	Se ejecuta si ningún case coincide  
+### Partes  
+| Parte	| Función |  
+|---------|-------|  
+| switch (expr)	| Expresión a evaluar   
+| case valor:	| Coincidencia estricta (===)  
+| break;	| Sale del switch (no del script)  
+| default: | Se ejecuta si ningún case coincide  
 
 ## ¿Cuándo usar switch y cuándo if?  
 Situación	Estructura  
@@ -214,7 +215,7 @@ se pueden combinar varias condiciones con && o || (ej. while (password !== "1234
 
 # Clase05. bucle do...while   
 Ejecuta el bloque de código al menos una vez y luego evalúa la condición para decidir si repite.  
-*Su sintaxis es:  
+* Su sintaxis es:  
 
 do {
   // instrucciones
@@ -251,14 +252,14 @@ while (i <= 5) { console.log(i); i++; }
 // for (más compacto)
 for (let i = 1; i <= 5; i++) { console.log(i); }
 
-### Variantes de recorrido:
+### Variantes de recorrido:  
   
 Actualización	Secuencia.  
 i++	1, 2, 3, 4, 5
 i--	5, 4, 3, 2, 1
 i += 2	2, 4, 6, 8, 10
 
-### Casos de uso típicos:
+### Casos de uso típicos:  
 
 * Contar un número conocido de repeticiones.
 * Recorrer una secuencia ascendente o descendente.
@@ -267,22 +268,22 @@ i += 2	2, 4, 6, 8, 10
 * Recorrer índices de arrays (empezando en 0).
 
 
-### Errores comunes:
+### Errores comunes:  
 
 * Usar <= cuando el límite no debe incluirse (o viceversa).  
 * Incrementar en la dirección opuesta al recorrido.  
 * Olvidar la actualización → bucle infinito.  
 * Empezar en 1 por costumbre cuando los arrays empiezan en 0.  
 
-### Cuándo elegirlo: 
-cuando sabes de antes cuántas veces repetir o puedes controlar el recorrido con una variable. Si no lo sabes, while o do...while serían más adecuados.  
+### Cuándo elegirlo:  
+Cuando sabes de antes cuántas veces repetir o puedes controlar el recorrido con una variable. Si no lo sabes, while o do...while serían más adecuados.  
 
-# Clase 07. Arrays.
+# Clase 07. Arrays.  
 Un array en JavaScript agrupa varios valores con un único nombre, accesibles por índice (que empieza en 0).
 
 const numeros = [10, 20, 30];
 
-### Conceptos clave:
+### Conceptos clave:  
 
 ## Propiedad / Método	Uso  
 * array[i]	Leer o modificar el elemento en la posición i  
@@ -292,7 +293,7 @@ const numeros = [10, 20, 30];
 * pop()	Quitar y devolver el último elemento  
 
 ### Const con arrays:  
-impide reasignar la variable completa, pero sí permite modificar elementos, push(), pop(), etc.
+Impide reasignar la variable completa, pero sí permite modificar elementos, push(), pop(), etc.
 
 const numeros = [1, 2, 3];  
 numeros[0] = 99;   // permitido  
@@ -364,5 +365,37 @@ Dentro de una función puedes usar if, for, etc., normalmente.
 | Crear una función enorme	| Dividir por responsabilidades|  
 | Pensar que sin return no devuelve nada | 	Devuelve undefined implícitamente|  
 
+# Clase10. Funciones que devuelven un valor    
 
+Una función con return no solo ejecuta una acción: produce un dato reutilizable que puede guardarse en una variable, mostrarse, compararse o usarse en otras operaciones. A diferencia de C# o Java, en JavaScript no se declara el tipo de retorno; basta con return valor;   
+  
+### Uso del valor devuelto:  
+  
+Guardarlo: const r = sumar(5, 3);  
+Usarlo directamente: console.log(sumar(5, 3));  
+Incorporarlo a expresiones: const doble = sumar(5, 3) * 2;   
+  
+### Comportamiento clave de return:  
+Finaliza la función inmediatamente — cualquier código después de él no se ejecuta.   
+Puede devolver cualquier tipo: números, textos, booleanos, arrays, objetos.  
+Se usan múltiples return en switch o if para rutas de salida distintas.   
+
+### Diferencia fundamental:  
+  
+| Función de acción	| Función con return |  
+|---------|-------|  
+| Muestra o modifica algo	| Produce un resultado |  
+| No entrega dato al llamador	| El resultado se guarda o reutiliza |  
+| mostrarTabla(5);	| const total = sumar(5, 3); |  
+  
+### Buena práctica:   
+Separar cálculo (la función devuelve el dato) de presentación (decidir fuera cómo se muestra)  
+  
+### Errores frecuentes:  
+  
+* Olvidar return → la función devuelve undefined.  
+* Poner código útil después de return → nunca se ejecuta.  
+* Mostrar dentro cuando se necesita reutilizar → devolver el dato y presentar fuera.  
+* Ignorar el valor devuelto → guardarlo o usarlo en una expresión.  
+* Devolver valores incoherentes → mantener una responsabilidad clara y resultados predecibles.   
 
