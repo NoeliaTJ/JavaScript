@@ -60,12 +60,13 @@ let fraseEnMayusculas = frase.toUpperCase();
 let fraseSinEspacios = frase.trim(); // *se usa poco*  
 
 ### Métodos de Math  
-| Método	| Comportamiento	| Ejemplo	| Resultado| 
+
+| Método	| Comportamiento | Ejemplo	| Resultado |  
 |---------|-------|  
-| Math.round(x)	| Redondea al entero más cercano	| Math.round(4.5)	5  |  
-| Math.floor(x)	| Redondea siempre hacia abajo	| Math.floor(4.9)	4  |  
-| Math.ceil(x)	| Redondea siempre hacia arriba	| Math.ceil(4.1)	5  |  
-| Math.trunc(x)	| Elimina la parte decimal (sin redondear)	| Math.trunc(4.9)	4 |   
+| Math.round(x)	| Redondea al entero más cercano	| Math.round(4.5)	5|  
+| Math.floor(x)	| Redondea siempre hacia abajo	| Math.floor(4.9)	4|  
+| Math.ceil(x) | Redondea siempre hacia arriba | Math.ceil(4.1)	5|  
+| Math.trunc(x)	| Elimina la parte decimal (sin redondear)| Math.trunc(4.9)	4 |  
   
 Con números negativos: floor ≠ trunc  
 console.log(Math.floor(-4.2)); // -5  (hacia abajo = más negativo)  
