@@ -60,20 +60,21 @@ let fraseEnMayusculas = frase.toUpperCase();
 let fraseSinEspacios = frase.trim(); // *se usa poco*  
 
 ### Métodos de Math  
-## Método	Comportamiento	Ejemplo	Resultado  
-Math.round(x)	Redondea al entero más cercano	Math.round(4.5)	5  
-Math.floor(x)	Redondea siempre hacia abajo	Math.floor(4.9)	4  
-Math.ceil(x)	Redondea siempre hacia arriba	Math.ceil(4.1)	5   
-Math.trunc(x)	Elimina la parte decimal (sin redondear)	Math.trunc(4.9)	4   
-
+| Método	| Comportamiento	| Ejemplo	| Resultado| 
+|---------|-------|  
+| Math.round(x)	| Redondea al entero más cercano	| Math.round(4.5)	5  |  
+| Math.floor(x)	| Redondea siempre hacia abajo	| Math.floor(4.9)	4  |  
+| Math.ceil(x)	| Redondea siempre hacia arriba	| Math.ceil(4.1)	5  |  
+| Math.trunc(x)	| Elimina la parte decimal (sin redondear)	| Math.trunc(4.9)	4 |   
+  
 Con números negativos: floor ≠ trunc  
 console.log(Math.floor(-4.2)); // -5  (hacia abajo = más negativo)  
 console.log(Math.trunc(-4.2)); // -4  (solo corta la parte decimal)  
 console.log(Math.ceil(-4.2));  // -4  (hacia arriba = más positivo)  
-
+  
 toFixed(n)  
 Indica cuántos decimales conservar. Devuelve un string, no un number.   
-
+  
 const numero = 4.5678;  
 
 console.log(numero.toFixed(2)); // "4.57"  
