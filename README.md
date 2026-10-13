@@ -397,5 +397,31 @@ Separar cálculo (la función devuelve el dato) de presentación (decidir fuera 
 * Poner código útil después de return → nunca se ejecuta.  
 * Mostrar dentro cuando se necesita reutilizar → devolver el dato y presentar fuera.  
 * Ignorar el valor devuelto → guardarlo o usarlo en una expresión.  
-* Devolver valores incoherentes → mantener una responsabilidad clara y resultados predecibles.   
+* Devolver valores incoherentes → mantener una responsabilidad clara y resultados predecibles.
+
+# Clase 11. Material de objetos y clases en JavaScript:  
+
+### Objetos literales:  
+  
+Agrupan datos relacionados en una sola estructura con { propiedad: valor }.  
+Se accede a propiedades con objeto.propiedad y se pueden modificar aunque la variable sea const (const solo impide reasignar la variable, no sus propiedades).  
+Pueden contener métodos (funciones internas) que usan this para referirse al propio objeto.  
+Se combinan bien con arrays de objetos, estructura muy usada en Frontend.  
+
+### Clases:  
+  
+Sirven como molde para crear muchos objetos con la misma estructura y comportamiento. 
+El constructor se ejecuta al instanciar con new y define los datos iniciales.   
+Cada instancia mantiene su propio estado independiente.  
+Los métodos pueden modificar el estado del objeto (p. ej., restar vida).  
+
+### Diferencia clave:  
+  
+| Objeto | literal	| Clase |  
+|---------|-------|  
+| Directo, para un objeto concreto	| Molde para muchos objetos iguales |  
+| Se crea con { ... }	| Se define con class, se instancia con new |   
+  
+
+No se estudia en este bloque: herencia, polimorfismo, prototipos en profundidad, campos privados, getters/setters ni clases abstractas/interfaces.  
 
